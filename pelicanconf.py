@@ -34,6 +34,8 @@ PLUGINS = ["tag_cloud"]
 # Fixed tag could size great differences
 TAG_CLOUD_STEPS = 1
 
+DISQUS_SITENAME = "starofrainnighteng"
+
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
