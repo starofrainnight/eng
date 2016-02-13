@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>StarOfRainNight's Home</title>
+    <title>The "standard" C library?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="starofrainnight">
@@ -64,7 +64,7 @@
           <div class="nav-collapse">
             <ul class="nav">
                           <li class="divider-vertical"></li>
-                  <li >
+                  <li class="active">
                     <a href="./category/development.html">
 						<i class="icon-folder-open icon-large"></i>development
 					</a>
@@ -89,9 +89,58 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-<ul>
-<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-</ul>
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to The "standard" C library?">
+                                        The "standard" C library?
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2009-06-24T22:58:00+08:00">
+        <i class="icon-calendar"></i>三 24 六月 2009
+</abbr>
+<span class="label">By</span>
+<a href="./author/starofrainnight.html"><i class="icon-user"></i>starofrainnight</a>
+<span class="label">Category</span>
+<a href="./category/development.html"><i class="icon-folder-open"></i>development</a>.
+
+
+</footer><!-- /.post-info -->                </div>
+                <p>For a long time, each C compiler provided a &quot;standard&quot; library, but we know all the &quot;standard&quot; C library just a joke, they are not so &quot;standard&quot; actually. Especially in cross-platform development, depend on the difference in compiler's design and the point of view, each compiler will add to or removed some behavious in the C library, just as type different : socklen_t defined in linux but windows not, SOCKET_ERROR defined in windows but linux not, even different headers with a same function, that lead us to have to increase expenditure : the sucking things below goes everywhere in our codes just take a compromise of them.</p>
+<pre class="literal-block">
+#ifdef LINUX
+...
+#elif WIN32
+...
+#elif MACOX
+...
+#endif
+</pre>
+<p>So i always search for a cross-platform base library seems like the &quot;standard&quot; C library, it must have some characteristic list below:</p>
+<ol class="arabic simple">
+<li>It must base on the current compiler's C library.</li>
+<li>It must have the same types and the same api similar to the &quot;standard&quot; C library, and needn't to change you code when you using different compiler and in different operating system.</li>
+<li>It must compatible with the types and apis in C library. ( for example : you could use socket() to create a socket handle or do the same with compatible api compatible_socket(), you could operate the handle by send() or by compatible_send(), it should invoke without difficulty on local C library api or compatible apis. )</li>
+<li>All api's behavious predictable, execute situation the same on different compiler and operating system.</li>
+<li>It must dependence less except the C library from compilers.</li>
+</ol>
+<p>May be someone will ask why not try the GLib?</p>
+<p>The GLib is a good choice for C, and it's an excellent C utilities library, but it's not the thing i searching for. First, it implement all things independent of C library, though it could convert some basic C type to the types it using( just as FILE ), what's not my willing to do. Secondary, it toooooo GNU's, it must compile in the unix like environment with pkg-config ( ex : cygwin, msys, linux ... ), it depend on libintl, libiconv, etc ... third, in some cross-platform developments, the hardware and the environment decide it couldn't use so large a library ( you know, some compiler we have to use will compile all the library into the executable file, that greatly enlarge the last executable file size. ), and it seems so much dependences. May be it's also the reason why so much independent C package don't choice GLib as the base backend and implement their tiny compatible base layer ( ex : SDL, FreeImage, tinyxml ... ).</p>
+<p>Actually, we need at last is : a library compatible to C standard library with similar apis ( removed all platform / compiler characteristic ).</p>
+<p>I haven't seem there have something like this yet, may be it exist but i don't know.</p>
+<p>After a long long time waitting, I decided to implement one for myself finally ...</p>
+
+                </div><!-- /.entry-content -->
+        </article>
+</section>
         </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">

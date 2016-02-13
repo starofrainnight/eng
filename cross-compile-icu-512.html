@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>StarOfRainNight's Home</title>
+    <title>Cross Compile ICU 51.2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="starofrainnight">
@@ -64,7 +64,7 @@
           <div class="nav-collapse">
             <ul class="nav">
                           <li class="divider-vertical"></li>
-                  <li >
+                  <li class="active">
                     <a href="./category/development.html">
 						<i class="icon-folder-open icon-large"></i>development
 					</a>
@@ -89,9 +89,71 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-<ul>
-<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-</ul>
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to Cross Compile ICU 51.2">
+                                        Cross Compile ICU 51.2
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2013-08-01T21:24:00+08:00">
+        <i class="icon-calendar"></i>四 01 八月 2013
+</abbr>
+<span class="label">By</span>
+<a href="./author/starofrainnight.html"><i class="icon-user"></i>starofrainnight</a>
+<span class="label">Category</span>
+<a href="./category/development.html"><i class="icon-folder-open"></i>development</a>.
+
+
+<span class="label">Tags</span>
+	<a href="./tag/compilation.html"><i class="icon-tag"></i>compilation</a>
+	<a href="./tag/icu.html"><i class="icon-tag"></i>icu</a>
+</footer><!-- /.post-info -->                </div>
+                <p>The IBM ICU library can not simply invoke configure to finish the cross-compilation, we should do some steps to process it.</p>
+<p>We assume you have already downloaded and unpacked ICU 51.2 to &quot;/opt/icu&quot;</p>
+<div class="section" id="local-compilation">
+<h2>Local Compilation</h2>
+<p>Compile for current os.</p>
+<p>ICU need some stuffs from ICU which compiled for current operatoin system, so we satisfy it's requirement.</p>
+<p>First, we make an icu source copy :</p>
+<pre class="literal-block">
+cp -rfd /opt/icu /opt/icu_prebuild
+</pre>
+<p>Secondary, we compile it for current opearting system :</p>
+<pre class="literal-block">
+cd /opt/icu_prebuild/source
+./configure
+make
+</pre>
+</div>
+<div class="section" id="cross-compilation">
+<h2>Cross Compilation</h2>
+<p>We could now cross compile our ICU library now:</p>
+<pre class="literal-block">
+export TOOLCHAIN_TARGET_SYSTEM=arm-none-linux-gnueabi
+export TOOLCHAIN_INSTALL_DIRECTORY=/opt/toolchain
+
+cd /opt/icu/source
+./configure CC=$TOOLCHAIN_TARGET_SYSTEM-gcc CXX=$TOOLCHAIN_TARGET_SYSTEM-g++ CPP=$TOOLCHAIN_TARGET_SYSTEM-cpp --host=$TOOLCHAIN_TARGET_SYSTEM --prefix=$TOOLCHAIN_INSTALL_DIRECTORY --enable-shared=yes --enable-tests=no --enable-samples=no --with-cross-build=/opt/icu_prebuild/source
+make
+</pre>
+</div>
+<div class="section" id="notice">
+<h2>NOTICE</h2>
+<p>Do not try to compile the static version of ICU, seems that would cause some errors.</p>
+</div>
+
+                </div><!-- /.entry-content -->
+        </article>
+</section>
         </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">

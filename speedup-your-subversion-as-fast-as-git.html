@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>StarOfRainNight's Home</title>
+    <title>Speedup your Subversion ! As fast as Git!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="starofrainnight">
@@ -69,7 +69,7 @@
 						<i class="icon-folder-open icon-large"></i>development
 					</a>
                   </li>
-                  <li >
+                  <li class="active">
                     <a href="./category/scm.html">
 						<i class="icon-folder-open icon-large"></i>SCM
 					</a>
@@ -89,9 +89,82 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-<ul>
-<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to Speedup your Subversion ! As fast as Git!">
+                                        Speedup your Subversion ! As fast as Git!
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2008-09-30T16:56:00+08:00">
+        <i class="icon-calendar"></i>二 30 九月 2008
+</abbr>
+<span class="label">By</span>
+<a href="./author/starofrainnight.html"><i class="icon-user"></i>starofrainnight</a>
+<span class="label">Category</span>
+<a href="./category/scm.html"><i class="icon-folder-open"></i>SCM</a>.
+
+
+<span class="label">Tags</span>
+	<a href="./tag/svn.html"><i class="icon-tag"></i>svn</a>
+	<a href="./tag/git.html"><i class="icon-tag"></i>git</a>
+</footer><!-- /.post-info -->                </div>
+                <div class="section" id="preface">
+<h2>1&nbsp;&nbsp;&nbsp;Preface</h2>
+<p>Do you angry with the speed of svn commit speed ? (more than ten thousand files)</p>
+<p>Do you want your Subversion commit speed as fast as GIT and HG?</p>
+<p>Do you have a lot of projects controling by Subversion?</p>
+<p>Do you have many projects have more than ten thousand files?</p>
+<p>Do you want to extent the Subvesion to a decentralized version control system?</p>
+<p>Following these steps you could earn what you want :)</p>
+</div>
+<div class="section" id="local-respository">
+<h2>2&nbsp;&nbsp;&nbsp;Local Respository</h2>
+<p>If you are a developer for yourself, and don't want to share your repository and if you have been use these type Repository Access URLs to localhost :</p>
+<pre class="literal-block">
+svn://
+http://
+http://
+svn+ssh://
+</pre>
+<p>Now, just relocate respository to you local respository path, that enough for this situation:</p>
+<pre class="literal-block">
+[windows] file:///d:/svndepot/myproject
+[linux] file:///path/to/repos
+</pre>
+</div>
+<div class="section" id="remote-respository">
+<h2>3&nbsp;&nbsp;&nbsp;Remote Respository</h2>
+<p>If you are a member of a group, and share the Repository with the others on a server:</p>
+<ul class="simple">
+<li>Goto download SVK, and learn how to setup and use it.</li>
+<li>SVK: take a mirror of server's Repository</li>
+<li>SVK: create a local branch of your project</li>
+<li>Check your project out from the local branch with local path ( <a class="reference external" href="file://">file://</a>.... )</li>
+<li>Ok, now you could use the Subversion Manager Tools (ex : TortoiseSVN, RapidSVN, ect. ) to taste the commit speed! ^_^b</li>
 </ul>
+</div>
+<div class="section" id="notice">
+<h2>4&nbsp;&nbsp;&nbsp;Notice</h2>
+<p>After you have finish your sources modified and you want to commit all your changes in your local branch to remote server, you must use SVK to sync the mirror Repository and then push the changes (these operation will commit all changes in your local branch to the remote server ).</p>
+</div>
+<div class="section" id="effect">
+<h2>5&nbsp;&nbsp;&nbsp;Effect</h2>
+<p>I have a project contains 9453 files using svn:// to access the server, each times i have to wasting 10~20 minutes just commit a little changes. Now, i just need to wait 2 seconds. Because the Manager Tools just access the Repository from Harddisk not the Network ^_^! When you satisfy what all your changes to your local branch, you just need to push them (with merge) to the server, SVK will take fast upload operation^o^.</p>
+<p>Now, the Subversion as fast as GIT and become a decentralized version control system ^O^ ....</p>
+</div>
+
+                </div><!-- /.entry-content -->
+        </article>
+</section>
         </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">
