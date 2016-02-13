@@ -29,7 +29,7 @@ LINKS = (("My Chinese Blog", "/cht"),
 SOCIAL = ()
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["tag_cloud"]
+PLUGINS = ["tag_cloud", "minify"]
 
 # Fixed tag could size great differences
 TAG_CLOUD_STEPS = 1
