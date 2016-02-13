@@ -21,7 +21,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = ()
+LINKS = (("My Chinese Blog", "/cht"),
+    ("My old Chinese Blog", "http://starofrainnight.blogspot.com"),
+    ("My old English Blog", "http://starofrainnight-eng.blogspot.com"),)
 
 # Social widget
 SOCIAL = ()
