@@ -10,6 +10,7 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
 THEME = "bootstrap2-dark"
+THEME_BOOTSTRAP2_DARK_HIDE_FONT_AWESOME = True
 
 DEFAULT_LANG = 'en'
 
