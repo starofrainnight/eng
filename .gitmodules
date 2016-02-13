@@ -4,3 +4,6 @@
 [submodule "bootstrap2-dark"]
 	path = bootstrap2-dark
 	url = git@github.com:starofrainnight/pelican-theme-bootstrap2-dark.git
+[submodule "plugins"]
+	path = plugins
+	url = git://github.com/getpelican/pelican-plugins.git
