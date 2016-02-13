@@ -38,6 +38,8 @@ DISQUS_SITENAME = "starofrainnighteng"
 
 DEFAULT_PAGINATION = 10
 
+DISPLAY_CATEGORIES_ON_MENU = False
+
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
