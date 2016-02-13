@@ -32,9 +32,6 @@ SOCIAL = ()
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["tag_cloud", "minify"]
 
-# Fixed tag could size great differences
-TAG_CLOUD_STEPS = 1
-
 DISQUS_SITENAME = "starofrainnighteng"
 
 DEFAULT_PAGINATION = 10
