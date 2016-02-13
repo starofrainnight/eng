@@ -28,6 +28,12 @@ LINKS = (("My Chinese Blog", "/cht"),
 # Social widget
 SOCIAL = ()
 
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["tag_cloud"]
+
+# Fixed tag could size great differences
+TAG_CLOUD_STEPS = 1
+
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
