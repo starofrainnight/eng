@@ -1,0 +1,6 @@
+[submodule "content"]
+	path = content
+	url = ssh://git@10.9.0.50:10022/starofrainnight/articles-eng.git
+[submodule "bootstrap2-dark"]
+	path = bootstrap2-dark
+	url = git@github.com:starofrainnight/pelican-theme-bootstrap2-dark.git
