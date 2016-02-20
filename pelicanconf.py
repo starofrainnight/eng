@@ -40,5 +40,7 @@ DEFAULT_METADATA = {
     'status': 'draft',
 }
 
+TAG_CLOUD_SORTING = 'size'
+
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
