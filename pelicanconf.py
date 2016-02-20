@@ -22,9 +22,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (("My Chinese Blog", "/cht"),
-    ("My old Chinese Blog", "http://starofrainnight.blogspot.com"),
-    ("My old English Blog", "http://starofrainnight-eng.blogspot.com"),)
+LINKS = (("My Chinese Blog", "/cht"),)
 
 # Social widget
 SOCIAL = ()
@@ -44,5 +42,3 @@ DEFAULT_METADATA = {
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
-
-
