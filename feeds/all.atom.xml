@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>StarOfRainNight's Home</title><link href="https://starofrainnight.github.io/cht/" rel="alternate"></link><link href="https://starofrainnight.github.io/cht/feeds/all.atom.xml" rel="self"></link><id>https://starofrainnight.github.io/cht/</id><updated>2016-05-09T21:41:00+08:00</updated><entry><title>The coding style</title><link href="https://starofrainnight.github.io/cht/the-coding-style.html" rel="alternate"></link><updated>2016-05-09T21:41:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2016-05-09:cht/the-coding-style.html</id><summary type="html">&lt;p&gt;I think &amp;quot;Coding Style&amp;quot; should contained the follow parties.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Format Style&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The format of codes, just like rules for:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Indenting&lt;/li&gt;
+&lt;li&gt;Spacing&lt;/li&gt;
+&lt;li&gt;Alignments&lt;/li&gt;
+&lt;li&gt;Newlines&lt;/li&gt;
+&lt;li&gt;Positioning&lt;/li&gt;
+&lt;li&gt;Line Splitting&lt;/li&gt;
+&lt;li&gt;Blank lines&lt;/li&gt;
+&lt;li&gt;etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;Naming Convention&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+All those names just as function name, class name, variant name, if they are matched to camel case or pascal case, etc.&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;Coding Rules&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some rules to force programmer not to do or must to do during coding.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For example :&lt;/p&gt;
+&lt;p&gt;Do not allow use assign operator &amp;quot;=&amp;quot; during &amp;quot;if&amp;quot; condition !&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# Wrong
+if(a = 12)
+{
+...
+}
+
+# Right
+if(a == 12)
+{
+...
+}
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;Version Control System Rules&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+Some rules about how to write a commit comment.&lt;/blockquote&gt;
+</summary><category term="coding-styler"></category></entry><entry><title>The beginning of a coding styler</title><link href="https://starofrainnight.github.io/cht/the-beginning-of-a-coding-styler.html" rel="alternate"></link><updated>2016-05-07T16:48:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2016-05-07:cht/the-beginning-of-a-coding-styler.html</id><summary type="html">&lt;p&gt;We are wasting so much time on improving source code quality, doing things like force people to obey a strict paper with hundreds coding rules. We have to yell at programmer whom offend the rules and kick their ass to follow each rule, but they will forget more and more details after a few days. So, there only rules master could remember all details about those rules and commit without any coding style problems.&lt;/p&gt;
+&lt;p&gt;Day after day, programmers will get tired to follow the rules while there have much more important thing needs to do. The source code quality will get worse by worse, finally the source code become unreadable and the whole project go into the grave.&lt;/p&gt;
+&lt;p&gt;This situation must change! That's why I started to develop on this aspect.&lt;/p&gt;
+&lt;p&gt;How could we focus on the program logic but not cause the source code getting unreadable?&lt;/p&gt;
+&lt;p&gt;Actually there already have some utilities to help for do this job automatically:&lt;/p&gt;
+&lt;p&gt;Code Formatting&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;uncrustify&lt;/li&gt;
+&lt;li&gt;astyle&lt;/li&gt;
+&lt;li&gt;clang-format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Static Code Analyser&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Artistic Style&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis"&gt;https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.owasp.org/index.php/Static_Code_Analysis"&gt;https://www.owasp.org/index.php/Static_Code_Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You could invoke them manually or write a script to execute them, but as you know huam is unreliable ...&lt;/p&gt;
+&lt;p&gt;So we need a point to insert our script for let the utilities to work automatically without human manually.&lt;/p&gt;
+&lt;p&gt;All programmer must commit source code to source code repository, so THAT IS THE POINT!&lt;/p&gt;
+&lt;p&gt;We construct a git hook script to do all the dirty jobs, so all works will be done while commit!&lt;/p&gt;
+&lt;p&gt;Certainly, another question comes : how we put the script into &amp;quot;.git/hooks&amp;quot; ??&lt;/p&gt;
+&lt;p&gt;We will invoke use_coding_styler() in CMakeLists.txt to ensure all things are ready.&lt;/p&gt;
+</summary><category term="coding-styler"></category></entry><entry><title>Cross Compile Mesa 9.1.5 without X11</title><link href="https://starofrainnight.github.io/cht/cross-compile-mesa-915-without-x11.html" rel="alternate"></link><updated>2013-08-02T12:06:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2013-08-02:cht/cross-compile-mesa-915-without-x11.html</id><summary type="html">&lt;p&gt;Recently I try to add opengl support for our embeded project, at least software emulated support. So I try to cross compile the mesa3d library. There are tons errors about X11 related stuffs missing, but we do not need the X11 support! After a long and difficult journey, I found the way to compile it without X11 and with framebuffer only.&lt;/p&gt;
+&lt;p&gt;You must enable the dri options, otherwise it will report:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/mesa/lib/libGLESv2.so: undefined reference to `_glapi_Dispatch' or something else.
+&lt;/pre&gt;
+&lt;p&gt;Because the glapi will not compile without dri.&lt;/p&gt;
+&lt;p&gt;See references:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://bugs.freedesktop.org/show_bug.cgi?id=61750"&gt;https://bugs.freedesktop.org/show_bug.cgi?id=61750&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;The compile commands:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+export TOOLCHAIN_TARGET_SYSTEM=arm-none-linux-gnueabi
+export  TOOLCHAIN_INSTALL_DIRECTORY=/opt/toolchain
+
+./configure CPPFLAGS=-DMESA_EGL_NO_X11_HEADERS CFLAGS=-DMESA_EGL_NO_X11_HEADERS CC=$TOOLCHAIN_TARGET_SYSTEM-gcc CXX=$TOOLCHAIN_TARGET_SYSTEM-g++ --build=$TOOLCHAIN_BUILD_SYSTEM --target=$TOOLCHAIN_TARGET_SYSTEM --host=$TOOLCHAIN_TARGET_SYSTEM --prefix=$TOOLCHAIN_INSTALL_DIRECTORY --enable-opengl --enable-gles2 --enable-gles1 --disable-glx --enable-egl --enable-gallium-egl --enable-dri --with-dri-drivers=swrast --with-gallium-drivers=swrast --with-egl-platforms=fbdev --disable-xorg --disable-xa --disable-xlib-glx
+&lt;/pre&gt;
+&lt;p&gt;Commands Explanation:&lt;/p&gt;
+&lt;p&gt;If without MESA_EGL_NO_X11_HEADERS defined, there will cause compile errors because without X11 headers, and we do not have any other better options to disable the X11 using, see &amp;quot;include/EGL/eglplatform.h&amp;quot;. So we just defined the macro to avaid this suitation.&lt;/p&gt;
+</summary><category term="mesa"></category><category term="opengl"></category><category term="compilation"></category></entry><entry><title>Cross Compile ICU 51.2</title><link href="https://starofrainnight.github.io/cht/cross-compile-icu-512.html" rel="alternate"></link><updated>2013-08-01T21:24:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2013-08-01:cht/cross-compile-icu-512.html</id><summary type="html">&lt;p&gt;The IBM ICU library can not simply invoke configure to finish the cross-compilation, we should do some steps to process it.&lt;/p&gt;
+&lt;p&gt;We assume you have already downloaded and unpacked ICU 51.2 to &amp;quot;/opt/icu&amp;quot;&lt;/p&gt;
+&lt;div class="section" id="local-compilation"&gt;
+&lt;h2&gt;Local Compilation&lt;/h2&gt;
+&lt;p&gt;Compile for current os.&lt;/p&gt;
+&lt;p&gt;ICU need some stuffs from ICU which compiled for current operatoin system, so we satisfy it's requirement.&lt;/p&gt;
+&lt;p&gt;First, we make an icu source copy :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cp -rfd /opt/icu /opt/icu_prebuild
+&lt;/pre&gt;
+&lt;p&gt;Secondary, we compile it for current opearting system :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd /opt/icu_prebuild/source
+./configure
+make
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cross-compilation"&gt;
+&lt;h2&gt;Cross Compilation&lt;/h2&gt;
+&lt;p&gt;We could now cross compile our ICU library now:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+export TOOLCHAIN_TARGET_SYSTEM=arm-none-linux-gnueabi
+export TOOLCHAIN_INSTALL_DIRECTORY=/opt/toolchain
+
+cd /opt/icu/source
+./configure CC=$TOOLCHAIN_TARGET_SYSTEM-gcc CXX=$TOOLCHAIN_TARGET_SYSTEM-g++ CPP=$TOOLCHAIN_TARGET_SYSTEM-cpp --host=$TOOLCHAIN_TARGET_SYSTEM --prefix=$TOOLCHAIN_INSTALL_DIRECTORY --enable-shared=yes --enable-tests=no --enable-samples=no --with-cross-build=/opt/icu_prebuild/source
+make
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="notice"&gt;
+&lt;h2&gt;NOTICE&lt;/h2&gt;
+&lt;p&gt;Do not try to compile the static version of ICU, seems that would cause some errors.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="compilation"></category><category term="icu"></category></entry><entry><title>Construct Your Cross-Compilation Toolchain</title><link href="https://starofrainnight.github.io/cht/construct-your-cross-compilation-toolchain.html" rel="alternate"></link><updated>2013-07-19T17:54:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2013-07-19:cht/construct-your-cross-compilation-toolchain.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;Introduction&lt;/h2&gt;
+&lt;p&gt;In normally, if you want to development for an embedded-system with ARM
+cpu, you need a cross-compilation toolchain. There have three ways to
+obtain the toolchain :&lt;/p&gt;
+&lt;p&gt;External hyperlinks, like &lt;a class="reference external" href="http://www.python.org/"&gt;Python&lt;/a&gt;.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Acquire toolchain from manufacturer of your evaluation-board.&lt;/li&gt;
+&lt;li&gt;Acquire toolchain from third-party organization, just as :&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.mentor.com/embedded-software/downloads/#scb"&gt;Mentor’s Sourcery CodeBench&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://launchpad.net/gcc-arm-embedded"&gt;linaro embedded toolchain for ARM&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Compile your cross-compilation toolchain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The way 1 maybe the best choice if it fit for your requirement, because
+it has been well tested and stable enough for your development on
+specific board.&lt;/p&gt;
+&lt;p&gt;The way 2 sometimes may not fit for your kernel or source code. It could
+successfully finished your compilation that does not means it do not
+have any problems. This choice is for whom do not have much time to
+compile their toolchain and their probject must start immediately.&lt;/p&gt;
+&lt;p&gt;The way 3 maybe a better way to suit for your requirement, you could use
+the stable “linaro” version GCC, that version sometimes more stable than
+upstream. With this way you could use any version GCC you want and
+compile the toolchain with specific kernel source without any
+compatibility problems. Certainly this way do not have much test on your
+board, that’s the risk you have to afford.&lt;/p&gt;
+&lt;p&gt;How we compile our cross-compilation toolchain? You could compile the
+toolchain’s libraries, utilities one by one, but we introduce an easier
+way to achieve that: crosstool-ng.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="preparation"&gt;
+&lt;h2&gt;2&amp;nbsp;&amp;nbsp;&amp;nbsp;Preparation&lt;/h2&gt;
+&lt;p&gt;Assume we are using Ubuntu 12.04&lt;/p&gt;
+&lt;p&gt;Assume we using user named “bob”&lt;/p&gt;
+&lt;p&gt;First we prepare the crosstool-ng running environment, we must have
+these utilities installed:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+aptitude install bison flex texinfo automake libtool patch gcj-jre gcj-jdk gawk
+&lt;/pre&gt;
+&lt;p&gt;We download crosstool-ng from &lt;a class="reference external" href="http://crosstool-ng.org"&gt;http://crosstool-ng.org&lt;/a&gt; and decompress to
+home directory, now the decompressed crosstool-ng source code directory
+is “/home/bob/crosstool-ng-1.18.0”.&lt;/p&gt;
+&lt;p&gt;Enter the crosstool-ng source code directory, and execute these commands
+:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+./configure -prefix=~/crosstool-ng
+make
+make install
+&lt;/pre&gt;
+&lt;p&gt;After that, the crosstool-ng will be installed into directory
+“/home/bob/crosstool-ng”.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="start-our-journey"&gt;
+&lt;h2&gt;3&amp;nbsp;&amp;nbsp;&amp;nbsp;Start our journey!&lt;/h2&gt;
+&lt;div class="section" id="initialize-default-configuration"&gt;
+&lt;h3&gt;3.1&amp;nbsp;&amp;nbsp;&amp;nbsp;Initialize default configuration&lt;/h3&gt;
+&lt;p&gt;Enter samples directory in crosstool-ng source code directory :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd ~/crosstool-ng-1.18.0/samples
+&lt;/pre&gt;
+&lt;p&gt;Find out which toolchain you want to compile, we assume
+“arm-unknown-linux-gnueabi”.&lt;/p&gt;
+&lt;p&gt;Enter the directory :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd arm-unknown-linux-gnueabi
+&lt;/pre&gt;
+&lt;p&gt;You will see there have two files:&lt;/p&gt;
+&lt;p&gt;The crosstool.config is what we want! Copy it to the installed
+crosstool-ng directory and renamed to “.config” :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cp crosstool.config ~/crosstool-ng/.config
+&lt;/pre&gt;
+&lt;p&gt;Ok, now we have the default configuration for our toolchains, those
+parameters in the configuration are been tested, so we need not to try
+our configuration again.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="modify-configuration-to-fit-for-our-requirement"&gt;
+&lt;h3&gt;3.2&amp;nbsp;&amp;nbsp;&amp;nbsp;Modify configuration to fit for our requirement&lt;/h3&gt;
+&lt;p&gt;Now we should do little modification to make the compiled toolchain fit
+for our requirement.&lt;/p&gt;
+&lt;p&gt;Enter the installed crosstool-ng directory :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd ~/crosstool-ng
+./ct-ng menuconfig
+&lt;/pre&gt;
+&lt;p&gt;Go to option : Operating System —&amp;gt; Linux kernel version, You could
+specific your kernel version, if you have a custom modified kernel, you
+have to set it to “custom tarball or directory” and specific the custom
+directory to your kernel source tree directory, for example we specific
+it to “/home/bob/linux-2.6.35.3”.&lt;/p&gt;
+&lt;p&gt;Go to option : C compiler, enable “Show Linaro versions”, the linaro GCC
+versions are much stable , you have better use that one.&lt;/p&gt;
+&lt;p&gt;You have better disable Fortran and Java compilation, they will cause
+much complications.&lt;/p&gt;
+&lt;p&gt;You have to check other options to fit for you embedded board .&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="build"&gt;
+&lt;h3&gt;3.3&amp;nbsp;&amp;nbsp;&amp;nbsp;build&lt;/h3&gt;
+&lt;p&gt;After all configuration done, we now go for our long trip :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+./ct-ng build
+&lt;/pre&gt;
+&lt;p&gt;All needed packages will be download to “~/src”, so you need to keep
+connection to internet.&lt;/p&gt;
+&lt;p&gt;But during compile process, may be have some issues:&lt;/p&gt;
+&lt;p&gt;Sometimes ct-ng will download some packages with *.tar.lzma, but the
+ct-ng can’t recognize those format and failed to unpack lead build
+process stopped, so you need to download the *.tar.gz of specific
+package and put it into ~/src. For example :&lt;/p&gt;
+&lt;p&gt;If build faild to unpack expat-2.1.0.tar.lzma, you will see there have a
+file named “expat-2.1.0.tar.lzma” in ~/src, so you have to download
+expat-2.1.0.tar.gz manuall from expat’s offical website and put it into
+~/src and delete the expat-2.1.0.tar.lzma.&lt;/p&gt;
+&lt;p&gt;After success builded, the whole toolchain will be put into ~/x-tools,
+that’s what you want.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="compilation"></category><category term="crosstool-ng"></category></entry><entry><title>The "standard" C library?</title><link href="https://starofrainnight.github.io/cht/the-standard-c-library.html" rel="alternate"></link><updated>2009-06-24T22:58:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2009-06-24:cht/the-standard-c-library.html</id><summary type="html">&lt;p&gt;For a long time, each C compiler provided a &amp;quot;standard&amp;quot; library, but we know all the &amp;quot;standard&amp;quot; C library just a joke, they are not so &amp;quot;standard&amp;quot; actually. Especially in cross-platform development, depend on the difference in compiler's design and the point of view, each compiler will add to or removed some behavious in the C library, just as type different : socklen_t defined in linux but windows not, SOCKET_ERROR defined in windows but linux not, even different headers with a same function, that lead us to have to increase expenditure : the sucking things below goes everywhere in our codes just take a compromise of them.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+#ifdef LINUX
+...
+#elif WIN32
+...
+#elif MACOX
+...
+#endif
+&lt;/pre&gt;
+&lt;p&gt;So i always search for a cross-platform base library seems like the &amp;quot;standard&amp;quot; C library, it must have some characteristic list below:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;It must base on the current compiler's C library.&lt;/li&gt;
+&lt;li&gt;It must have the same types and the same api similar to the &amp;quot;standard&amp;quot; C library, and needn't to change you code when you using different compiler and in different operating system.&lt;/li&gt;
+&lt;li&gt;It must compatible with the types and apis in C library. ( for example : you could use socket() to create a socket handle or do the same with compatible api compatible_socket(), you could operate the handle by send() or by compatible_send(), it should invoke without difficulty on local C library api or compatible apis. )&lt;/li&gt;
+&lt;li&gt;All api's behavious predictable, execute situation the same on different compiler and operating system.&lt;/li&gt;
+&lt;li&gt;It must dependence less except the C library from compilers.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;May be someone will ask why not try the GLib?&lt;/p&gt;
+&lt;p&gt;The GLib is a good choice for C, and it's an excellent C utilities library, but it's not the thing i searching for. First, it implement all things independent of C library, though it could convert some basic C type to the types it using( just as FILE ), what's not my willing to do. Secondary, it toooooo GNU's, it must compile in the unix like environment with pkg-config ( ex : cygwin, msys, linux ... ), it depend on libintl, libiconv, etc ... third, in some cross-platform developments, the hardware and the environment decide it couldn't use so large a library ( you know, some compiler we have to use will compile all the library into the executable file, that greatly enlarge the last executable file size. ), and it seems so much dependences. May be it's also the reason why so much independent C package don't choice GLib as the base backend and implement their tiny compatible base layer ( ex : SDL, FreeImage, tinyxml ... ).&lt;/p&gt;
+&lt;p&gt;Actually, we need at last is : a library compatible to C standard library with similar apis ( removed all platform / compiler characteristic ).&lt;/p&gt;
+&lt;p&gt;I haven't seem there have something like this yet, may be it exist but i don't know.&lt;/p&gt;
+&lt;p&gt;After a long long time waitting, I decided to implement one for myself finally ...&lt;/p&gt;
+</summary></entry><entry><title>Speedup your Subversion ! As fast as Git!</title><link href="https://starofrainnight.github.io/cht/speedup-your-subversion-as-fast-as-git.html" rel="alternate"></link><updated>2008-09-30T16:56:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2008-09-30:cht/speedup-your-subversion-as-fast-as-git.html</id><summary type="html">&lt;div class="section" id="preface"&gt;
+&lt;h2&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;Preface&lt;/h2&gt;
+&lt;p&gt;Do you angry with the speed of svn commit speed ? (more than ten thousand files)&lt;/p&gt;
+&lt;p&gt;Do you want your Subversion commit speed as fast as GIT and HG?&lt;/p&gt;
+&lt;p&gt;Do you have a lot of projects controling by Subversion?&lt;/p&gt;
+&lt;p&gt;Do you have many projects have more than ten thousand files?&lt;/p&gt;
+&lt;p&gt;Do you want to extent the Subvesion to a decentralized version control system?&lt;/p&gt;
+&lt;p&gt;Following these steps you could earn what you want :)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="local-respository"&gt;
+&lt;h2&gt;2&amp;nbsp;&amp;nbsp;&amp;nbsp;Local Respository&lt;/h2&gt;
+&lt;p&gt;If you are a developer for yourself, and don't want to share your repository and if you have been use these type Repository Access URLs to localhost :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn://
+http://
+http://
+svn+ssh://
+&lt;/pre&gt;
+&lt;p&gt;Now, just relocate respository to you local respository path, that enough for this situation:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[windows] file:///d:/svndepot/myproject
+[linux] file:///path/to/repos
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="remote-respository"&gt;
+&lt;h2&gt;3&amp;nbsp;&amp;nbsp;&amp;nbsp;Remote Respository&lt;/h2&gt;
+&lt;p&gt;If you are a member of a group, and share the Repository with the others on a server:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto download SVK, and learn how to setup and use it.&lt;/li&gt;
+&lt;li&gt;SVK: take a mirror of server's Repository&lt;/li&gt;
+&lt;li&gt;SVK: create a local branch of your project&lt;/li&gt;
+&lt;li&gt;Check your project out from the local branch with local path ( &lt;a class="reference external" href="file://"&gt;file://&lt;/a&gt;.... )&lt;/li&gt;
+&lt;li&gt;Ok, now you could use the Subversion Manager Tools (ex : TortoiseSVN, RapidSVN, ect. ) to taste the commit speed! ^_^b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="notice"&gt;
+&lt;h2&gt;4&amp;nbsp;&amp;nbsp;&amp;nbsp;Notice&lt;/h2&gt;
+&lt;p&gt;After you have finish your sources modified and you want to commit all your changes in your local branch to remote server, you must use SVK to sync the mirror Repository and then push the changes (these operation will commit all changes in your local branch to the remote server ).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="effect"&gt;
+&lt;h2&gt;5&amp;nbsp;&amp;nbsp;&amp;nbsp;Effect&lt;/h2&gt;
+&lt;p&gt;I have a project contains 9453 files using svn:// to access the server, each times i have to wasting 10~20 minutes just commit a little changes. Now, i just need to wait 2 seconds. Because the Manager Tools just access the Repository from Harddisk not the Network ^_^! When you satisfy what all your changes to your local branch, you just need to push them (with merge) to the server, SVK will take fast upload operation^o^.&lt;/p&gt;
+&lt;p&gt;Now, the Subversion as fast as GIT and become a decentralized version control system ^O^ ....&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="svn"></category><category term="git"></category></entry></feed>

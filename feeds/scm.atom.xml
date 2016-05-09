@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>StarOfRainNight's Home</title><link href="https://starofrainnight.github.io/cht/" rel="alternate"></link><link href="https://starofrainnight.github.io/cht/feeds/scm.atom.xml" rel="self"></link><id>https://starofrainnight.github.io/cht/</id><updated>2008-09-30T16:56:00+08:00</updated><entry><title>Speedup your Subversion ! As fast as Git!</title><link href="https://starofrainnight.github.io/cht/speedup-your-subversion-as-fast-as-git.html" rel="alternate"></link><updated>2008-09-30T16:56:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2008-09-30:cht/speedup-your-subversion-as-fast-as-git.html</id><summary type="html">&lt;div class="section" id="preface"&gt;
+&lt;h2&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;Preface&lt;/h2&gt;
+&lt;p&gt;Do you angry with the speed of svn commit speed ? (more than ten thousand files)&lt;/p&gt;
+&lt;p&gt;Do you want your Subversion commit speed as fast as GIT and HG?&lt;/p&gt;
+&lt;p&gt;Do you have a lot of projects controling by Subversion?&lt;/p&gt;
+&lt;p&gt;Do you have many projects have more than ten thousand files?&lt;/p&gt;
+&lt;p&gt;Do you want to extent the Subvesion to a decentralized version control system?&lt;/p&gt;
+&lt;p&gt;Following these steps you could earn what you want :)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="local-respository"&gt;
+&lt;h2&gt;2&amp;nbsp;&amp;nbsp;&amp;nbsp;Local Respository&lt;/h2&gt;
+&lt;p&gt;If you are a developer for yourself, and don't want to share your repository and if you have been use these type Repository Access URLs to localhost :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn://
+http://
+http://
+svn+ssh://
+&lt;/pre&gt;
+&lt;p&gt;Now, just relocate respository to you local respository path, that enough for this situation:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[windows] file:///d:/svndepot/myproject
+[linux] file:///path/to/repos
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="remote-respository"&gt;
+&lt;h2&gt;3&amp;nbsp;&amp;nbsp;&amp;nbsp;Remote Respository&lt;/h2&gt;
+&lt;p&gt;If you are a member of a group, and share the Repository with the others on a server:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto download SVK, and learn how to setup and use it.&lt;/li&gt;
+&lt;li&gt;SVK: take a mirror of server's Repository&lt;/li&gt;
+&lt;li&gt;SVK: create a local branch of your project&lt;/li&gt;
+&lt;li&gt;Check your project out from the local branch with local path ( &lt;a class="reference external" href="file://"&gt;file://&lt;/a&gt;.... )&lt;/li&gt;
+&lt;li&gt;Ok, now you could use the Subversion Manager Tools (ex : TortoiseSVN, RapidSVN, ect. ) to taste the commit speed! ^_^b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="notice"&gt;
+&lt;h2&gt;4&amp;nbsp;&amp;nbsp;&amp;nbsp;Notice&lt;/h2&gt;
+&lt;p&gt;After you have finish your sources modified and you want to commit all your changes in your local branch to remote server, you must use SVK to sync the mirror Repository and then push the changes (these operation will commit all changes in your local branch to the remote server ).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="effect"&gt;
+&lt;h2&gt;5&amp;nbsp;&amp;nbsp;&amp;nbsp;Effect&lt;/h2&gt;
+&lt;p&gt;I have a project contains 9453 files using svn:// to access the server, each times i have to wasting 10~20 minutes just commit a little changes. Now, i just need to wait 2 seconds. Because the Manager Tools just access the Repository from Harddisk not the Network ^_^! When you satisfy what all your changes to your local branch, you just need to push them (with merge) to the server, SVK will take fast upload operation^o^.&lt;/p&gt;
+&lt;p&gt;Now, the Subversion as fast as GIT and become a decentralized version control system ^O^ ....&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="svn"></category><category term="git"></category></entry></feed>
