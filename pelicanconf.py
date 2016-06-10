@@ -28,7 +28,7 @@ LINKS = (("My Chinese Blog", "/cht"),)
 SOCIAL = ()
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["tag_cloud", "minify"]
+PLUGINS = ["tag_cloud", "minify", "pelican_lyx_reader"]
 
 DISQUS_SITENAME = "starofrainnighteng"
 
