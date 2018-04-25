@@ -22,7 +22,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (("My Chinese Blog", "/cht"),)
+LINKS = (("My Chinese Blog", "/chs"),)
 
 # Social widget
 SOCIAL = ()
